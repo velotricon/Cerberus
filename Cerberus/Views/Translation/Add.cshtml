@@ -1,0 +1,17 @@
+﻿<div ng-controller="AddTranslationController">
+    <div class="row">
+        <label>Word:</label>
+        <input type="text" ng-model="Word" />
+    </div>
+    <div class="row">
+        <label>Language:</label>
+        <crb-light-combo-box model="LangComboModel" combo="LanguageCombo" selected="ComboValue"></crb-light-combo-box>
+    </div>
+    <div class="row">
+        <label>Translation:</label>
+        <input type="text" ng-model="Translation" />
+    </div>
+    <div class="row">
+        <button ng-click="Submit();">OK</button>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+Wymagania dot. gridów
+1) Mają zwracać dowolne
+>>> Do fornt-end'u musi iść jakiś zunifikowany obiekt ma być jasno rozpoznawany
+
+2) Mają mieć pagowanie
+>>> To front-end sobie załatwia. Do front'a musi iść (kiedyś) ogólna ilość obiektów. 
+>>> Może ta ogólna ilość mogłaby iść razem z "Deskryptorem grida".
+
+3) Mają mieć dowolne filtry
+	- Po dacie
+	- Po godzinie
+	- Jako text
+	- Jako cyfry
+	- Kolumny, których nie ma na liście
+	- Listy rozwijane (combosy ale tylko light, tych dużych nie potrzeba)
+	- Lista checkboxów
+>>> Jak zrobić te filtry? Czy pisać je dla każdego grida indywidualnie? 
+>>> Może zrobić standardowy filtr dla kolumn (każda kolumna miałaby swój) i osobno pisać dodatkowe filtry?
+	
+4) Możliwość sortowania po kolumnach
+
+5) Zapamiętywanie filtrów na gridzie
+>>> Pytanie, czy zapamiętywać te filtry w sesji, czy na bazie?
+>>> Jeśli filtry miałyby być trzymane na bazie to musiałyby być przechowywane w postaci stringa (chyba, że jakoś inaczej)
+
+6) Trzeba rozdzielić deskryptor grida od danych z grida. Muszą być zaciągane w osobnych requestach.
+
+Deskryptor ma mieć:
+	- Nazwy kolumn
+	- Typy kolumn
+	- Tłumaczenia kolumn
+	- Ilość danych w gridzie (co jeśli ilość danych zmieni się w trakcie pracy na gridzie?)
+	- Filtry (może tylko dodatkowe)
+	- Mass akcje (z checkboxami)
+	- Action columns: edycja, usuwanie itp (co jeszcze poza edycją i usuwaniem)
+<<< brakuje filtrów
+	
+Dane (chyba po staremu):
+	- Lista kolumn (po kolei, same nazwy)
+	- Lista wierszy:
+		a) ID obiektu
+		b) Lista komórek w wierszu
+<<< To wygląda na zrobione		

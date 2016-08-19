@@ -1,0 +1,44 @@
+//*********************************************************************
+//SignInManager (Obs³uguje logowanie)
+
+var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+
+>>> 'SignInManager' to w³aœciwoœæ klasy 'ApplicationSignInManager'. Jest wyci¹gany z 'HttpContext' przy pomocy metody:
+HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+Ponadto do w³aœciwoœci 'SignInManager' mo¿na coœ przypisaæ ale przypisywanie jest prywatne.
+Wygl¹da na to, ¿e da siê przypisaæ jakiœ w³asny 'SignInManager' tylko poprzez konstruktor AccountController.
+
+
+
+//*********************************************************************
+//IdentityConfig (w folderze App_Start)
+W pliku IdentityConfig.cs zdefiniowana s¹ klasy:
+>>> ApplicationUserManager : UserManager<ApplicationUser>
+Tutaj definiowane s¹ ró¿ne ustawienia dotycz¹ce autoryzacji i autentykacji. D³ugoœæ has³a, i ró¿ne inne jakieœ tam ustawienia.
+
+>> ApplicationSignInManager : SignInManager<ApplicationUser, string>
+
+
+//*********************************************************************
+//Startup.Auth.cs (w folderze App_Start)
+>>> public void ConfigureAuth(IAppBuilder app)
+Wygl¹da to tak, jakby w tej metodzie rejestrowane by³y ró¿ne ustawienia dotycz¹ce autoryzacji i autentykacji.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
